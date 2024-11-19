@@ -1,0 +1,357 @@
+.todoList {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #001219;
+    padding: 20px;
+    
+    .container {
+        width: 100%;
+        max-width: 1000px;
+        background: linear-gradient(135deg, rgba(0, 18, 25, 0.95), rgba(0, 18, 25, 0.85));
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 216, 255, 0.15),
+                    inset 0 0 30px rgba(0, 216, 255, 0.05);
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 60px;
+        position: relative;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 216, 255, 0.1);
+        min-height: 500px;
+        margin-top: 70px;
+        
+        .formSection {
+            min-height: 500px;
+            h1 {
+                color: white;
+                font-size: 2.8rem;
+                margin-bottom: 40px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-align: center;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+        }
+
+        .welcomeSection {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+            padding-left: 40px;
+            border-left: 1px solid rgba(0, 216, 255, 0.1);
+
+            h2 {
+                font-size: 3rem;
+                margin-bottom: 25px;
+                font-weight: 700;
+                letter-spacing: 1.5px;
+                background: linear-gradient(45deg, #fff, #00d8ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 1.1rem;
+                line-height: 1.8;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.addTodo {
+    margin-bottom: 30px;
+    
+    input {
+        width: 100%;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(0, 216, 255, 0.2);
+        border-radius: 12px;
+        color: white;
+        font-size: 1rem;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+
+        &:focus {
+            outline: none;
+            border-color: rgba(0, 216, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 216, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        background: rgba(0, 216, 255, 0.8);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {
+            background: rgba(0, 216, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 216, 255, 0.2);
+        }
+    }
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+
+    .selectedCount {
+        margin-right: 15px;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.deleteSelected {
+            background: rgba(220, 53, 69, 0.8);
+            margin-right: 10px;
+
+            &:hover {
+                background: rgba(220, 53, 69, 1);
+                transform: translateY(-2px);
+            }
+        }
+
+        &.cancelSelection {
+            background: rgba(108, 117, 125, 0.5);
+
+            &:hover {
+                background: rgba(108, 117, 125, 0.8);
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+.todoItem {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    .checkbox{
+        opacity: 0;
+    }
+
+    .actionButtonsItem{
+        opacity: 0;
+    }
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateX(5px);
+
+        .checkbox {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .actionButtonsItem {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .checkbox {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+        cursor: pointer;
+        accent-color: #00d8ff;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+    }
+
+    &.selected {
+        background: rgba(255, 255, 255, 0.08);
+
+        .checkbox {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .actionButtonsItem {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    span {
+        flex: 1;
+        color: white;
+        font-size: 1rem;
+    }
+
+    .actionButtonsItem {
+        display: flex;
+        gap: 10px;
+        opacity: 0;
+        transform: translateX(10px);
+        transition: all 0.3s ease;
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
+            }
+
+            &.edit {
+                background: rgba(0, 123, 255, 0.5);
+                &:hover {
+                    background: rgba(0, 123, 255, 0.8);
+                }
+            }
+
+            &.delete {
+                background: rgba(220, 53, 69, 0.5);
+                &:hover {
+                    background: rgba(220, 53, 69, 0.8);
+                }
+            }
+        }
+    }
+
+    input[type="text"] {
+        flex: 1;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(0, 216, 255, 0.3);
+        border-radius: 8px;
+        color: white;
+        font-size: 1rem;
+        margin-right: 10px;
+
+        &:focus {
+            outline: none;
+            border-color: rgba(0, 216, 255, 0.5);
+        }
+    }
+}
+
+.selectAll {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        accent-color: #00d8ff;
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .todoList .container {
+        grid-template-columns: 1fr;
+        padding: 30px;
+        gap: 30px;
+        
+        .welcomeSection {
+            display: none;
+        }
+
+        .formSection h1 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+
+    .pageButton {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        background: rgba(0, 216, 255, 0.2);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover:not(:disabled) {
+            background: rgba(0, 216, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        &.active {
+            background: rgba(0, 216, 255, 0.8);
+            font-weight: bold;
+        }
+    }
+}

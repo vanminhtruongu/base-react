@@ -1,0 +1,58 @@
+{
+    "task_manager": "Task Manager",
+    "nav": {
+        "home": "Home",
+        "todo_list": "Todo List",
+        "calculator": "Calculator"
+    },
+    "home": {
+        "title": "Manage Your Tasks",
+        "highlight": "Efficiently",
+        "subtitle": "Stay organized, focused, and accomplish more with our intuitive task management solution.",
+        "features": {
+            "create_tasks": {
+                "title": "Create Tasks",
+                "description": "Easily add and organize your daily tasks"
+            },
+            "track_progress": {
+                "title": "Track Progress",
+                "description": "Monitor your productivity in real-time"
+            },
+            "achieve_goals": {
+                "title": "Achieve Goals",
+                "description": "Complete tasks and reach your objectives"
+            }
+        },
+        "buttons": {
+            "get_started": "Get Started",
+            "learn_more": "Learn More"
+        }
+    },
+    "todo": {
+        "title": "Todo List",
+        "welcome": {
+            "heading": "WELCOME BACK!",
+            "description": "Organize your tasks and boost your productivity with our intuitive todo list application."
+        },
+        "pagination": {
+            "previous": "Previous",
+            "next": "Next"
+        },
+        "add": {
+            "placeholder": "Add a new todo",
+            "button": "ADD"
+        },
+        "actions": {
+            "select_all": "Select All",
+            "selected_items": "{{count}} items selected",
+            "delete_selected": "Delete Selected",
+            "deselect_all": "Deselect All"
+        },
+        "item": {
+            "edit": "Edit",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel"
+        }
+    }
+}

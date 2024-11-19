@@ -1,0 +1,58 @@
+{
+    "task_manager": "Quản Lý Công Việc",
+    "nav": {
+        "home": "Trang Chủ",
+        "todo_list": "Danh Sách Việc",
+        "calculator": "Máy Tính"
+    },
+    "home": {
+        "title": "Quản Lý Công Việc",
+        "highlight": "Hiệu Quả",
+        "subtitle": "Luôn ngăn nắp, tập trung và hoàn thành nhiều việc hơn với giải pháp quản lý công việc trực quan của chúng tôi.",
+        "features": {
+            "create_tasks": {
+                "title": "Tạo Công Việc",
+                "description": "Dễ dàng thêm và sắp xếp công việc hàng ngày"
+            },
+            "track_progress": {
+                "title": "Theo Dõi Tiến Độ",
+                "description": "Giám sát năng suất của bạn theo thời gian thực"
+            },
+            "achieve_goals": {
+                "title": "Đạt Mục Tiêu",
+                "description": "Hoàn thành công việc và đạt được mục tiêu"
+            }
+        },
+        "buttons": {
+            "get_started": "Bắt Đầu Ngay",
+            "learn_more": "Tìm Hiểu Thêm"
+        }
+    },
+    "todo": {
+        "title": "Danh Sách Việc Cần Làm",
+        "welcome": {
+            "heading": "CHÀO MỪNG TRỞ LẠI!",
+            "description": "Sắp xếp công việc và nâng cao năng suất với ứng dụng quản lý công việc trực quan của chúng tôi."
+        },
+        "pagination": {
+            "previous": "Trước",
+            "next": "Tiếp"
+        },
+        "add": {
+            "placeholder": "Thêm việc cần làm mới",
+            "button": "THÊM"
+        },
+        "actions": {
+            "select_all": "Chọn Tất Cả",
+            "selected_items": "Đã chọn {{count}} mục",
+            "delete_selected": "Xóa Mục Đã Chọn",
+            "deselect_all": "Bỏ Chọn Tất Cả"
+        },
+        "item": {
+            "edit": "Sửa",
+            "delete": "Xóa",
+            "save": "Lưu",
+            "cancel": "Hủy"
+        }
+    }
+}
